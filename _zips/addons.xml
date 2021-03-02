@@ -1,30 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.hng" name="Heroes and Generals" version="2.0.1" provider-name="Twilight0">
-    <requires>
-        <import addon="xbmc.python" version="2.24.0"/>
-        <import addon="plugin.video.youtube" version="6.8.2"/>
-        <import addon="script.module.tulip" version="2.6.11"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="addon.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <reuselanguageinvoker>false</reuselanguageinvoker>
-        <summary lang="en">Heroes and Generals addon</summary>
-        <description lang="en">This addon is not developed, nor endorsed by Reto-Moto ApS</description>
-        <summary lang="el">Πρόσθετο Heroes and Generals</summary>
-        <description lang="el">Το πρόσθετο αυτό δεν αναπτύσσεται ούτε αναγνωρίζεται από την Reto-Moto ApS</description>
-        <license>GNU GPL, version 2 or later</license>
-        <website>https://heroesandgenerals.com</website>
-    </extension>
-    <news>09-07-2020 - [B]2.0.0[/B]
-- Updated youtube api keys
-- Rework of the addon and python 3 capability added
-- Updated main artwork</news>
-</addon>
-
 <addon id="context.subtitles.gr" version="0.0.6" name="Subtitles.gr menu item" provider-name="Twilight0">
     <requires>
         <import addon="xbmc.addon" version="16.1.000"/>
@@ -266,6 +241,65 @@
 </addon>
 
 <addon id="plugin.video.AliveGR" name="AliveGR" version="2.6.4" provider-name="Twilight0">
+    <requires>
+        <import addon="xbmc.addon" version="18.0.000"/>
+        <import addon="resource.images.alivegr.artwork" version="3.0.5"/>
+        <import addon="resource.images.alivegr.logos" version="1.0.2"/>
+        <import addon="script.module.resolveurl" version="5.1.18"/>
+        <import addon="script.module.resolveurl.pluginsgr" version="0.0.5"/>
+        <import addon="script.module.tulip" version="2.8.3"/>
+        <import addon="plugin.video.youtube" version="6.8.8"/>
+        <import addon="script.module.pyxbmct" version="1.3.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+        <provides>video audio image executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <summary lang="en">AliveGR addon for Kodi media center</summary>
+        <description lang="en_GB">AliveGR is an addon allowing streaming content available mostly in Greek language.</description>
+        <disclaimer lang="en_GB">AliveGR's author does not host, stream or distribute any of the content displayed inside this software and cannot be held responsible for the quality or availability of the listed streams.
+On demand content is scraped from various websites and is freely available on the internet on public domains. This software acts only as a search engine.
+Kindly note that AliveGR is not an official part of the media player you are running, and therefore not to be mentioned within official support channels, this addon has nothing to do with the media player itself, nor it’s intended use, it is simply a third party plugin which has been added to your system and it is provided "as is" with no warranty.</disclaimer>
+        <summary lang="el_GR">AliveGR, Μικροεφαρμογή για το κέντρο πολυμέσων Kodi</summary>
+        <description lang="el_GR">Το πρόσθετο AliveGR επιτρέπει την θέαση ροών με περιεχόμενο κυρίως εις την Ελληνική γλώσσα.</description>
+        <disclaimer lang="el_GR">Ο δημιουργός του AliveGR δεν φιλοξενεί ή παρέχει οποιοδήποτε από τα απεικονιζόμενα πολυμέσα και περιεχόμένο εντός του μενού του και δεν μπορεί να θεωρηθεί υπεύθυνος για την ποιότητα ή την διαθεσιμότητα των ροών.
+Το περιεχόμενο αναπαραγωγής κατά βούληση φιλτράρεται από διάφορες ιστοσελίδες ελεύθερα διαθέσιμες στο διαδίκτυο σε δημόσιους ιστότοπους. Το παρόν λογισμικό ενεργεί μόνο ως μηχανή αναζήτησης.
+Παρακαλώ προσέξτε ότι το AliveGR δεν είναι επίσημο κομμάτι του αναπαραγωγέα πολυμέσων Kodi ή της καθορισμένης χρήσης του, είναι απλά μία μικροεφαρμογή που προστέθηκε στο σύστημά σας και που παρέχεται "όπως είναι" χωρίς καμία εγγύηση καλής λειτουργίας.</disclaimer>
+        <language>en el</language>
+        <license>GPL-3.0-only</license>
+        <forum>https://github.com/Twilight0/plugin.video.AliveGR/issues</forum>
+        <source>https://github.com/Twilight0/plugin.video.AliveGR</source>
+        <website>https://alivegr.net/</website>
+        <size>1200000</size>
+        <news>+ [B]2.6.X[/B] [COLOR green]04-01-2021 - 27-01-2021[/COLOR]
+- ResolveURL is no longer imported optionally
+- Removed streamlink from dependencies and converted existing plugins for resolveurl usage
+- Fix search function for movies
+- Added sort methods for when pagination is enabled, because there is no proper way to control sort via Kodi's native method
+- Check streams when random stream action is selected for smooth transition between items back to back playback (or pseudo live)
+- Change priorities of the resolvers in the player module and have done some cleanup
+- Removed host choice notification
+- Fixed gamato kids indexer
+
++ [B]2.5.X[/B] [COLOR red]04-12-2020 - 06-12-2020[/COLOR]
+- Reworked some modules
+- Added pagination function
+- Updated youtube api keys and tweaked its function for applying keys</news>
+        <assets>
+            <icon>resources/media/icon.png</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+            <screenshot>resources/media/main_menu.jpg</screenshot>
+            <screenshot>resources/media/live_streams.jpg</screenshot>
+            <screenshot>resources/media/movies.jpg</screenshot>
+            <screenshot>resources/media/tv_series.jpg</screenshot>
+            <screenshot>resources/media/networks.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.AliveGR.fork" name="AliveGR.fork" version="3.0.0" provider-name="atpanos">
     <requires>
         <import addon="xbmc.addon" version="18.0.000"/>
         <import addon="resource.images.alivegr.artwork" version="3.0.5"/>
@@ -763,6 +797,31 @@ Kindly note that AliveGR is not an official part of the media player you are run
     </extension>
 </addon>
 
+<addon id="plugin.video.hng" name="Heroes and Generals" version="2.0.1" provider-name="Twilight0">
+    <requires>
+        <import addon="xbmc.python" version="2.24.0"/>
+        <import addon="plugin.video.youtube" version="6.8.2"/>
+        <import addon="script.module.tulip" version="2.6.11"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <summary lang="en">Heroes and Generals addon</summary>
+        <description lang="en">This addon is not developed, nor endorsed by Reto-Moto ApS</description>
+        <summary lang="el">Πρόσθετο Heroes and Generals</summary>
+        <description lang="el">Το πρόσθετο αυτό δεν αναπτύσσεται ούτε αναγνωρίζεται από την Reto-Moto ApS</description>
+        <license>GNU GPL, version 2 or later</license>
+        <website>https://heroesandgenerals.com</website>
+    </extension>
+    <news>09-07-2020 - [B]2.0.0[/B]
+- Updated youtube api keys
+- Rework of the addon and python 3 capability added
+- Updated main artwork</news>
+</addon>
+
 <addon id="plugin.video.montreal.greek-tv" name="Montreal Greek TV" version="2.1.6" provider-name="Greektimes.ca, Twilight0">
     <requires>
         <import addon="xbmc.addon" version="16.1.000"/>
@@ -929,6 +988,53 @@ Kindly note that AliveGR is not an official part of the media player you are run
 </addon>
 
 <addon id="plugin.video.skai.gr" version="3.1.0" name="SKAI Player" provider-name="Twilight0">
+    <requires>
+        <import addon="xbmc.addon" version="16.1.000"/>
+        <import addon="script.module.tulip" version="2.8.2" />
+        <import addon="plugin.video.youtube" version="6.8.2"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>video audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <reuselanguageinvoker>false</reuselanguageinvoker>
+        <summary lang="en_GB">SKAI Player addon for Kodi</summary>
+        <summary lang="en_GR">Πρόσθετο SKAI Player για το Kodi</summary>
+        <description lang="en_GB">SKAI live and on-demand broadcasts</description>
+        <description lang="el_GR">Ζωντανές και on demand υπηρεσίες του SKAI</description>
+        <disclaimer lang="en_GB">This addon offers content available in Greece and is not published nor endorsed by skai.gr</disclaimer>
+        <disclaimer lang="el_GR">Το πρόσθετο αυτό προσφέρει περιεχόμενο διαθέσιμο στην Ελλάδα και δεν έχει δημοσιευθεί ούτε εγκριθεί από το skai.gr</disclaimer>
+        <language>en el</language>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <source>https://github.com/Twilight0/plugin.video.skai.gr</source>
+        <website>http://www.skai.gr/</website>
+        <size>226000</size>
+        <news>[B]3.1.0[/B]
+- Updated youtube api key
+- Bumped dependencies
+
+[B]3.0.X[/B]
+- Rework of the addon for website redesign and deprecation of older APIs
+- Removed news in sign language
+- Added the entertainment section
+- Added suggested, popular and recent videos on news section
+- Removed sports
+- Bumped dependencies
+- Updated logo</news>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+<!--            <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>-->
+<!--            <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>-->
+<!--            <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>-->
+        </assets>
+        <!--<forum></forum>-->
+        <!--<email></email>-->
+    </extension>
+</addon>
+
+<addon id="plugin.video.skai.gr.fork" version="4.0.0" name="SKAI Player" provider-name="atpanos">
     <requires>
         <import addon="xbmc.addon" version="16.1.000"/>
         <import addon="script.module.tulip" version="2.8.2" />
@@ -1193,32 +1299,21 @@ Kindly note that AliveGR is not an official part of the media player you are run
     </assets>
 </addon>
 
-    <addon id="repository.twilight0" name="Twilight0 Addon Repository" version="1.4" provider-name="Twilight0">
-        <extension point="xbmc.addon.repository" name="Twilight0 Addon Repository">
-            <info compressed="false">https://raw.githubusercontent.com/Twilight0/repo.twilight0/master/_zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/Twilight0/repo.twilight0/master/_zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/Twilight0/repo.twilight0/master/_zips/</datadir>
+    <addon id="repository.twilight0.fork" name="twilight0 fork repo" version="1.0.0" provider-name="atpanos">
+        <requires>
+            <import addon="xbmc.addon" version="12.0.0"/>
+        </requires>
+        <extension point="xbmc.addon.repository" name="twilight0 fork repo">
+            <info compressed="false">https://raw.githubusercontent.com/atpanos/repo.twilight0.fork/master/_zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/atpanos/repo.twilight0.fork/master/_zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/atpanos/repo.twilight0.fork/master/_zips/</datadir>
             <hashes>false</hashes>
-            <dir>
-                <info compressed="false">https://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml</info>
-                <checksum>https://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml.md5</checksum>
-                <datadir zip="true">https://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/</datadir>
-            </dir>
-			<dir>
-				<info compressed="false">https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml</info>
-				<checksum>https://raw.githubusercontent.com/Gujal00/smrzips/master/addons.xml.md5</checksum>
-				<datadir zip="true">https://raw.githubusercontent.com/Gujal00/smrzips/master/zips/</datadir>
-            </dir>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>Repository for various of my add-ons</summary>
-            <description>Repository for various of my add-ons</description>
+            <summary>fork of twilight0 repo</summary>
+            <description>fork of twilight0 repo description.</description>
             <platform>all</platform>
-            <assets>
-                <icon>icon.png</icon>
-                <fanart>fanart.jpg</fanart>
-            </assets>
-        </extension>
+    </extension>
 </addon>
 
     <addon id="repository.twilight0.libs" name="Twilight0 Libs Repository" version="1.2" provider-name="Twilight0">
