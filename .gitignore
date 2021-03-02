@@ -44,6 +44,8 @@ _tools/
 
 /plugin\.video\.skai\.gr/
 
+/plugin\.video\.skai\.gr\.fork/
+
 /plugin\.video\.pylearner/
 
 /plugin\.video\.novasports\.gr/
@@ -83,6 +85,8 @@ _tools/
 /service\.streamlink\.proxy/
 
 /plugin\.video\.AliveGR/
+
+/plugin\.video\.AliveGR\.fork/
 
 /resource\.images\.alivegr\.artwork
 
